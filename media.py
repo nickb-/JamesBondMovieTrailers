@@ -4,6 +4,7 @@
 # Needs to have class-level variables:
 #   - title, trailer_youtube_url, poster_image_url
 
+
 class Movie():
     """
     Creates an object of class Movie, which stores movie metadata:

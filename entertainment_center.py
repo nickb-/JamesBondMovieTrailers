@@ -5,8 +5,9 @@ import media
 import fresh_tomatoes
 
 # We have already collated the movie information and saved it in a CSV file
-# called "movie_database.csv". We will read this in, parse each line (one movie)
+# called "movie_database.csv". We will read this in, parse each line
 # per line, and store the relevant information in a Movie class.
+
 
 def parse_movie_information(movie_information):
     """
@@ -19,10 +20,10 @@ def parse_movie_information(movie_information):
 
     # parse the movie information
     movie_clean = [re.sub("\"", "", x) for x in movie_information.split(",")]
-    movie_information = {"title":movie_clean[0],
-                         "release_year":movie_clean[1],
-                         "poster_url":movie_clean[2],
-                         "trailer_url":movie_clean[3]}
+    movie_information = {"title": movie_clean[0],
+                         "release_year": movie_clean[1],
+                         "poster_url": movie_clean[2],
+                         "trailer_url": movie_clean[3]}
 
     # save an an instance of class Movie
     movie = media.Movie(movie_information['title'],
@@ -30,8 +31,8 @@ def parse_movie_information(movie_information):
                         movie_information['trailer_url'])
 
     return movie
-    
-    
+
+
 def read_database(filepath):
     """
        Reads a CSV file of move information.
@@ -43,5 +44,5 @@ def read_database(filepath):
 
     return movies
 
-       
+
 fresh_tomatoes.open_movies_page(read_database("movie_database.csv"))
